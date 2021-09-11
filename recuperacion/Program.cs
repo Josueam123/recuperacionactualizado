@@ -15,29 +15,6 @@ namespace recuperacion
 			DateTime fInicial, fFinal;
 
 			int op = 0;
-
-			//alquileres.Add(new Alquiler("josue",
-										//50.5,
-										//2001,
-										//DateTime.Parse("2021-08-01"),
-										//DateTime.Parse("2021-09-01"),
-										//
-										//));
-			//alquileres.Add(new Alquiler("aguirre",
-                                        //60.5,
-                                        //2002,
-                                        //DateTime.Parse("2021-08-01"),
-                                        //DateTime.Parse("2021-09-01"),
-                                        //02
-                                        //));
-			//alquileres.Add(new Alquiler("mendoza",
-										//70.5,
-										//2003,
-										//DateTime.Parse("2021-08-10"),
-										//DateTime.Parse("2021-09-01"),
-										//02
-										//));
-
 			do
 			{
 				Console.WriteLine("SELECCIONE UNA OPCION DEL MENU");
@@ -138,7 +115,12 @@ namespace recuperacion
 		}
 		public static void mayorCincuenta()
 		{
-			IEnumerable<Alquiler> alquileresMayor = alquileres.Where(alquiler => alquiler.calcularAlquiler() > 50).Select(alquiler => alquiler);
+
+            // foreach (Alquiler item in alquileres)
+            // {
+            //     Console.WriteLine("modulo {0}", item.modulo);
+            // }
+			IEnumerable<Alquiler> alquileresMayor = alquileres.Where(alquiler => alquiler.modulo > 50).Select(alquiler => alquiler);
 
 			if (alquileresMayor.Count() > 0)
 			{
@@ -148,7 +130,7 @@ namespace recuperacion
 					Console.WriteLine("Fecha incial: {0}", alquiler.fechaInicial.ToString("yyyy-MM-dd"));
 					Console.WriteLine("Fecha final: {0}", alquiler.fechaFinal.ToString("yyyy-MM-dd"));
 					Console.WriteLine("Puesto de amarre: {0}", alquiler.posAmarre);
-					Console.WriteLine("Total: {0}", alquiler.calcularAlquiler());
+					Console.WriteLine("Total: {0}", alquiler.modulo);
 					Console.WriteLine("");
 				}
 				Console.WriteLine("");

@@ -9,6 +9,7 @@ namespace recuperacion
 		public DateTime fechaInicial { get; set; }
 		public DateTime fechaFinal { get; set; }
 		public int posAmarre { get; set; }
+		public double modulo { get; set; }
 
 		public Alquiler(string matricula, double metros, int anioFab, DateTime fInicial,
 		DateTime fFinal, int posAmarre)
@@ -18,14 +19,15 @@ namespace recuperacion
 			this.fechaFinal = fFinal;
 			this.posAmarre = posAmarre;
 			this.cliente = new Cliente();
+			calcularAlquiler();
 		}
-		public double calcularAlquiler()
+		public void calcularAlquiler()
 		{
 			TimeSpan diff = fechaFinal - fechaInicial;
 			int dias = diff.Days;
-			Barco barco = new Barco();
-			double res = barco.getModulo() * 1.8;
-			return res;
+			// Barco barco = new Barco();
+			this.modulo = base.getModulo() * 1.8;
+			// return res;
 		}
 
 	}

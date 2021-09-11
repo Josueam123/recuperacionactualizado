@@ -18,14 +18,6 @@ namespace recuperaciones
 			this.anioFab = anioFab;
 		}
 
-		public Barco(){
-
-		}
-
-		// public Barco Modulo(double modulo){
-		// 	this.modulo = modulo;
-		// 	return this;
-		// }
 		public double getModulo()
 		{
 			int tipo = 0;
@@ -57,7 +49,7 @@ namespace recuperaciones
 					Console.Write("Numero de camarotes: ");
 					int camarotes = Convert.ToInt32(Console.ReadLine());
 					Console.WriteLine("");
-					
+
 					res = res * (potenciaYate + camarotes);
 					break;
 				case 4:
